@@ -14,5 +14,4 @@
 * Maven
 * Highchars module
 * Unit tested with JUnit4
-
-- Deployed with [HEROKU](https://young-retreat-77842.herokuapp.com/)
+* Deployed with [HEROKU](https://young-retreat-77842.herokuapp.com/)
