@@ -1,0 +1,2 @@
+# CoinTrends-App
+Recruitment task
