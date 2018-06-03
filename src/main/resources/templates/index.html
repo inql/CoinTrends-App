@@ -1,0 +1,44 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>CoinTrends</title>
+
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<img th:src="@{/img/kainos-logo-sticky.png}"/>
+
+<div id="container" style="height: 400px; min-width: 310px"></div>
+
+<div>
+    <form class="form-inline" th:action="@{/}" th:object="${range}" method="post" id="rangeForm">
+        <label for="start">Start</label>
+        <input type="date" name="start" th:field="*{startDate}" th:min="${min}" th:max="${max}" id="start">
+        <label for="end">End</label>
+        <input type="date" name="end" th:field="*{endDate}" th:max="${max}" id="end">
+        <button type="submit" class="btn btn-primary">Change time range</button>
+    </form>
+</div>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var btcToUsd = /*[[${btctousd}]]*/ [];
+    var ethToUsd = /*[[${ethtousd}]]*/ [];
+    var ltcToUsd = /*[[${ltctousd}]]*/ [];
+    var trendLine =/*[[${trendline}]]*/ [];
+    /*]]>*/
+</script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/stock/indicators/indicators.js"></script>
+<script src="https://code.highcharts.com/stock/indicators/zigzag.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
